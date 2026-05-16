@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order History</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bg-color: linear-gradient(150deg, black , rgb(39, 37, 37) , rgb(58, 55, 55));
+    --surface-color: rgb(43, 33, 33);
+    --text-primary: #f8fafc;
+    --text-secondary: wheat;
+    --accent: rgba(214, 83, 133, 0.918);
+    --border: rgba(214, 83, 133, 0.918);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background: var(--bg-color);
+    color:white;
+    padding:40px;
+}
+
+h1{
+    margin-bottom:30px;
+    text-align: center;
+    color: var(--accent);
+}
+
+.back{
+            padding:14px 30px;
+            border:none;
+            border-radius:10px;
+            background: var(--accent);
+            color:white;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+            margin-bottom: 10px;
+        }
+
+.back:hover{
+            background: rgba(226, 63, 172, 0.836);
+            transform: translateY(-2px);
+            }
+
+.orders{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.order-card{
+    background: var(--surface-color);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+    box-shadow: 0 4px 30px rgba(70, 69, 69, 0.726);
+}
+
+.order-card h2{
+    margin-bottom:15px;
+    color: var(--accent);
+}
+
+.item{
+    margin-bottom:10px;
+    color: var(--text-secondary);
+}
+
+.total{
+    margin-top:15px;
+    font-size:20px;
+    font-weight:700;
+}
+.date{
+    margin-top:10px;
+    font-size:14px;
+    color:gray;
+}
+
+.empty{
+    text-align:center;
+    margin-top:100px;
+    font-size:22px;
+    color: var(--text-secondary);
+}
+
+</style>
+</head>
+<body>
+    <h1>ORDER HISTORY</h1>
+    <a href="/"><button class="back">Back</button></a>
+
+    <% if(orders.length === 0) { %>
+        <div class="empty">
+            NO ORDERS YET
+        </div>
+        <% } else {%>
+            <div class="orders">
+                <% orders.forEach(order => { %>
+                    <div class="order-card">
+                        <h2>ORDER</h2>
+                        <% order.items && order.items.forEach(item => { %>
+
+            <div class="item">
+      <%= item.name %> x <%= item.quantity || 1 %>
+      - ₹<%= item.price * (item.quantity || 1) %>
+   </div>
+
+           <% }) %>
+                            <div class="total">
+                                Total : ₹<%= order.total %>
+                            </div>
+
+                            <div class="date">
+                                <%= new Date(order.createdAt).toLocaleString() %>
+                            </div>
+                    </div>
+                    <% }) %>
+            </div>
+            <% } %>
+    </body>
+    </html>

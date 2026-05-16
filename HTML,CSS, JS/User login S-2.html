@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #abd7f7;
+    width: 360px;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.login-container .icon{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+h2 {
+    font-size: 24px;
+    color: #2b4f73;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.input-field i {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    transform: translateY(-50%);
+    color: #505b62;
+    font-size : 1.3em;
+}
+
+input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #1E1E1E, #515151 , #848484); /* Dark gradient from top to bottom */
+    color: #f5a623; /* Orange text color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: linear-gradient(to bottom, #555555, #333333); /* Reverse gradient on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Slightly increased shadow on hover */
+}
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-container  icon" id = "otpPage">
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="50" height="50">
+                <!-- Circle -->
+                <circle cx="256" cy="256" r="240" fill="#505b62" stroke="#505b62" stroke-width="15"/>
+                <!-- User icon -->
+                <path fill="none" stroke="#ec8b0a" stroke-width="20" d="M256 128c44.2 0 80 35.8 80 80s-35.8 80-80 80-80-35.8-80-80 35.8-80 80-80zm0 288c-53 0-100-24.3-130.4-62.4 15.5-38.6 53.2-65.6 98.4-65.6h64c45.3 0 82.9 27 98.4 65.6C356 391.7 309 416 256 416z"/>
+            </svg>
+          </div>
+          
+        <div class="login-form">
+            
+            <h2>Sign In</h2>
+            <form id="loginForm">
+                    <div class="input-field input-icon">
+                        <i class="fas fa-lock "></i>
+                    <input type="text" id="otp" placeholder="Enter OTP">
+                </div>
+                <button type="submit" class="login-btn" id="loginButton">Login</button>
+            
+        </form>
+    </div>
+</div>
+        
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('sendOtp').addEventListener('click', function() {
+        document.getElementById('signInPage').classList.add('d-none');
+        document.getElementById('otpPage').classList.remove('d-none');
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Login functionality would be implemented here');
+    });
+
+    document.getElementById('otpForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('OTP verification would be implemented here');
+    });
+</script>
+
+
+    
+    <footer>
+        <p>&copy; Tender Management. All rights reserved.</p>
+    </footer>
+</body>
+</html>

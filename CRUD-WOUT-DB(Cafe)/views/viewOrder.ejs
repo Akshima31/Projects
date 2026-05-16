@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ViewOrder</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:url('/orders.jpg') no-repeat center center/cover;
+font-family:Arial;
+color:white;
+}
+
+.container{
+width:600px;
+padding:40px;
+border-radius:20px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-bottom:20px;
+}
+
+th,td{
+padding:10px;
+text-align:center;
+}
+
+th{
+background:rgba(0,0,0,0.3);
+}
+
+.total{
+text-align:right;
+font-weight:bold;
+margin-top:10px;
+}
+
+.buttons{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+}
+
+button{
+padding:10px 15px;
+border:none;
+border-radius:8px;
+background:black;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#333;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Orders Summary</h2>
+
+<table>
+
+<tr>
+<th>Sno</th>
+<th>Total Price</th>
+</tr>
+
+<% orders.forEach(order => { %>
+
+<tr>
+<td><%= order.id %></td>
+<td>₹ <%= order.total %></td>
+</tr>
+
+<% }) %>
+
+</table>
+
+
+<div class="buttons">
+<a href="/">
+<button>Back</button>
+</a>
+</div>
+
+</div>
+
+</body>
+</html>

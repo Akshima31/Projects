@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Home</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg-color: linear-gradient(150deg, rgb(61, 60, 60) , rgb(80, 76, 76) , rgb(100, 95, 95));
+            --surface-color: rgb(43, 33, 33);
+            --text-primary: #f8fafc;
+            --text-secondary: wheat;
+            --accent: rgba(214, 83, 133, 0.918);
+            --accent-hover: rgba(226, 63, 172, 0.836);
+            --border: rgba(214, 83, 133, 0.918);
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Inter', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-primary);
+        }
+
+        /* HEADER */
+
+        header{
+            width:100%;
+            padding:20px 80px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            border-bottom:1px solid var(--border);
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            position:sticky;
+            top:0;
+            z-index:100;
+        }
+
+        .logo{
+            font-size:2rem;
+            font-weight:800;
+            color: var(--accent);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:30px;
+        }
+        nav ul li{
+            margin-top: 10px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color: var(--text-primary);
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color: var(--accent);
+        }
+        button{
+            padding:14px 30px;
+            border:none;
+            border-radius:10px;
+            background: var(--accent);
+            color:white;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        /* HERO SECTION */
+
+        .hero{
+            min-height:90vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:40px;
+        }
+        .hero-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    width:100%;
+    max-width:1200px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-img{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-img img{
+    width:500px;
+    height: 550px;
+    border-radius:20px;
+    box-shadow: 0 4px 30px rgba(12, 12, 12, 0.911);
+}
+
+
+        .hero h1{
+            font-size:4rem;
+            margin-bottom:20px;
+            color: var(--accent);
+            margin-left: 20px;
+        }
+
+        .hero p{
+            max-width:700px;
+            color: var(--text-secondary);
+            line-height:1.8;
+            font-size:1.1rem;
+        }
+
+        .hero button{
+            margin-top:30px;
+            padding:14px 30px;
+            border:none;
+            border-radius:10px;
+            background: var(--accent);
+            color:white;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .hero button:hover{
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+
+        /* SECTION COMMON */
+
+        section{
+            padding:100px 80px;
+        }
+
+        .section-title{
+            text-align:center;
+            font-size:2.5rem;
+            margin-bottom:50px;
+            color: var(--accent);
+        }
+
+        /* ABOUT */
+
+        
+
+        .about-box{
+            background: var(--surface-color);
+            border:1px solid var(--border);
+            border-radius:20px;
+            padding:40px;
+            line-height:1.9;
+            color: var(--text-secondary);
+            box-shadow: 0 4px 30px rgba(12, 12, 12, 0.911);
+        }
+       .about-container{
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+.about-img{
+    flex:1;
+}
+
+.about-img img{
+    width:500px;
+    height: 550px;
+    border-radius:20px;
+    box-shadow: 0 4px 30px rgba(12, 12, 12, 0.911);
+}
+
+        /* CONTACT */
+
+        .contact-box{
+            display: inline-flex;
+            justify-content:space-between;
+            gap:65px;
+            color: wheat;
+            max-width:700px;
+            margin:auto;
+            margin-left: 7px;
+            margin-right: 15px;
+            background: var(--surface-color);
+            padding:40px;
+            border-radius:20px;
+            border:1px solid var(--border);
+            box-shadow: 0 4px 30px rgba(12, 12, 12, 0.911);
+        }
+
+
+        /* FOOTER */
+
+        footer{
+            padding:30px;
+            text-align:center;
+            border-top:1px solid var(--border);
+            color: var(--text-secondary);
+            margin-top:50px;
+            background-color:black ;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            header{
+                flex-direction:column;
+                gap:20px;
+                padding:20px;
+            }
+
+            nav ul{
+                gap:15px;
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .hero h1{
+                font-size:2.5rem;
+            }
+
+            section{
+                padding:70px 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo"><u>Velvet Bites</u></div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/order-history">Orders History</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <form action="/logout" method="POST" style="display:inline;">
+                        <button type="submit" class="button">Logout</button>
+                 </form>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+        <div class="hero-content"> 
+        <div class="hero-text">
+        <h1>Welcome To <br> <i><u>Velvet Bites</u></i></h1>
+        <p>
+            Experience refreshing drinks, delicious desserts, and flavorful meals in a cozy atmosphere made for food lovers and good conversations.
+            </p>
+    </div>
+    <div class="hero-img">
+        <img src="/home1.jpg" alt="Coffee">
+    </div>
+    </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">About Us</h2>
+        <div class="about-container">
+
+        <div class="about-img">
+            <img src="/home2.jpg" alt="Cafe">
+        </div>
+
+        <div class="about-box">
+            <b>Velvet Bites</b> is a modern aesthetic café created for people who enjoy good food, 
+            relaxing vibes, and memorable moments. From refreshing drinks and fresh bakery treats to delicious meals,
+             we bring you a cozy and stylish café experience filled with comfort and flavor. 
+
+        </div>
+       </div>
+    </section>
+
+    
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">Contact Us</h2>
+
+      <div class="contact-box">
+                <i class="fa-solid fa-phone">  CALL US</i>
+                <p>9876543210 <br>8825479341</p>
+            </div>
+
+            <div class="contact-box">
+                <i class="fa-solid fa-location-arrow">  LOCATION</i>
+                <p>XYZ street ,ABC Road <br>New delhi</p>
+            </div>
+
+            <div class="contact-box">
+                <i class="fa-solid fa-clock">  HOURS</i>
+                <p>Mon – Fri …… 11 am – 11 pm,<br>Sat, Sun  …… 11 am – 1 am</p>
+            </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 Velvet Bites | Crafted With Love ☕
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Menu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bg-color: linear-gradient(150deg,  rgb(61, 60, 60) , rgb(80, 76, 76) , rgb(100, 95, 95));
+    --surface-color: rgb(43, 33, 33);
+    --text-primary: #f8fafc;
+    --text-secondary: wheat;
+    --accent: rgba(214, 83, 133, 0.918);
+    --accent-hover: rgba(226, 63, 172, 0.836);
+    --border: rgba(214, 83, 133, 0.918);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+h1{
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background: var(--bg-color);
+    color:white;
+    padding:40px;
+}
+
+.back{
+            padding:14px 30px;
+            border:none;
+            border-radius:10px;
+            background: var(--accent);
+            color:white;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+            margin-bottom: 10px;
+        }
+
+.back:hover{
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            }
+
+.main{
+    display:flex;
+    gap:30px;
+}
+
+/* MENU GRID */
+
+.menu-grid{
+    flex:3;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:25px;
+}
+
+.card{
+    background: var(--surface-color);
+    border:1px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow: 0 4px 30px black;
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color: var(--text-secondary);
+    margin-bottom:15px;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.quantity button{
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:50%;
+    background: var(--accent);
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.add-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background: var(--accent);
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.add-btn:hover{
+    background: var(--accent-hover);
+}
+
+/* CART */
+
+.cart{
+    flex:1;
+    background: var(--surface-color);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+    height:fit-content;
+    position:sticky;
+    top:20px;
+     box-shadow: 0 4px 30px black
+}
+
+.cart h2{
+    margin-bottom:20px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    background:black;
+    padding:10px;
+    border-radius:10px;
+}
+
+.total{
+    margin-top:20px;
+    font-size:20px;
+}
+
+.cart button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    margin-top:15px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.place{
+    background: var(--accent);
+    color:white;
+}
+
+.clear{
+    background:red;
+    color:white;
+}
+
+.remove{
+    color:red;
+    cursor:pointer;
+}
+
+</style>
+</head>
+<body>
+    <h1>MENU</h1>
+    <a href="/"><button class="back">Back</button></a>
+<div class="main">
+
+    <!-- MENU -->
+
+    <div class="menu-grid">
+
+        <% menuItems.forEach((item, index) => { %>
+
+            <div class="card">
+
+                <img src="<%= item.image %>">
+
+                <div class="card-content">
+
+                    <h3><%= item.name %></h3>
+
+                    <p>₹<%= item.price %></p>
+
+                    <div class="quantity">
+
+                        <button onclick="decrease(<%= index %>)">-</button>
+
+                        <span id="qty-<%= index %>">0</span>
+
+                        <button onclick="increase(<%= index %>)">+</button>
+
+                    </div>
+
+                    <button 
+                        class="add-btn"
+                        onclick="addToCart('<%= item.name %>', <%= item.price %>, <%= index %>)">
+
+                        Add To Cart
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+
+    <!-- CART -->
+
+    <div class="cart">
+
+        <h2>Your Order</h2>
+
+        <div id="cart-items"></div>
+
+        <div class="total">
+            Total : ₹<span id="total">0</span>
+        </div>
+
+        <button class="place" onclick="placeOrder()">
+            Place Order
+        </button>
+
+        <button class="clear" onclick="clearCart()">
+            Clear Order
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+let quantities = {};
+
+let cart = [];
+
+let total = 0;
+
+// INCREASE
+
+function increase(index){
+
+    if(!quantities[index]){
+        quantities[index] = 0;
+    }
+
+    quantities[index]++;
+
+    document.getElementById(`qty-${index}`).innerText = quantities[index];
+}
+
+// DECREASE
+
+function decrease(index){
+
+    if(!quantities[index]){
+        quantities[index] = 0;
+    }
+
+    if(quantities[index] > 0){
+        quantities[index]--;
+    }
+
+    document.getElementById(`qty-${index}`).innerText = quantities[index];
+}
+
+// ADD TO CART
+
+function addToCart(name, price, index){
+
+    const qty = quantities[index] || 1;
+
+    cart.push({
+        name,
+        price,
+        quantity: qty
+    });
+
+    total += price * qty;
+
+    renderCart();
+}
+
+// RENDER CART
+
+function renderCart(){
+
+    const cartItems = document.getElementById('cart-items');
+
+    cartItems.innerHTML = '';
+
+    cart.forEach((item, i) => {
+
+        cartItems.innerHTML += `
+
+            <div class="cart-item">
+
+                <div>
+                    ${item.name} x ${item.quantity}
+                </div>
+
+                <div>
+                    ₹${item.price * item.quantity}
+
+                    <span class="remove" onclick="removeItem(${i})">
+                        ❌
+                    </span>
+                </div>
+
+            </div>
+        `;
+    });
+
+    document.getElementById('total').innerText = total;
+}
+
+// REMOVE ITEM
+
+function removeItem(index){
+
+    total -= cart[index].price * cart[index].quantity;
+
+    cart.splice(index, 1);
+
+    renderCart();
+}
+
+// CLEAR CART
+
+function clearCart(){
+
+    cart = [];
+
+    total = 0;
+
+    renderCart();
+}
+
+// PLACE ORDER
+
+async function placeOrder(){
+
+    if(cart.length === 0){
+        alert("Cart Empty");
+        return;
+    }
+
+    const response = await fetch('/place-order', {
+
+        method:'POST',
+
+        headers:{
+            'Content-Type':'application/json'
+        },
+
+        body: JSON.stringify({
+            items: cart,
+            total: total
+        })
+    });
+
+    const data = await response.json();
+
+    if(data.success){
+
+        alert("Order Placed");
+
+        setTimeout(()=>{
+            location.href = '/order-history';
+        },2000);
+
+        clearCart();
+    }
+    else{
+        alert("Error placing order");
+    }
+}
+
+</script>
+
+</body>
+</html>

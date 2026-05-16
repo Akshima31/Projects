@@ -1,0 +1,302 @@
+.body {
+    background-color: linear-gradient(180deg, #fff, #adcde4, #7db6dd); 
+}
+main {
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(to bottom, #ffffff, #9cd6ff, #7acaff);
+}
+.h2{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #0a3654;
+}
+.h3{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #0a3654;
+}
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #ffa500;
+}
+
+header .logo-name {
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.logout {
+    color:white;
+}
+.logout:hover{
+    background-color: #ffa500;
+    padding: 5px 7px;
+    border-radius: 5px;
+}
+.button-card {
+    background: #ffffff;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.button-card-2 {
+    background: #ffffff;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.button-card-2:hover {
+transform: translateY(-5px);
+}
+.button-card-1 {
+    background: linear-gradient(to bottom, #3379c8, #114886);
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    /* border-color: #0a3; */
+}
+
+.icon {
+width: 40px;
+height: 40px;
+margin-bottom: 10px;
+background:linear-gradient(to right,#000,#4e4f50);
+border-radius: 20%;
+padding: 10px;
+
+}
+
+.p {
+
+color: white;
+text-align:center;
+}
+/* .user-icon, .menu {
+    font-size: 24px;
+    margin-left: 10px;
+    color: white;
+} */
+
+
+.sidebar {
+    background-color: white; 
+    color: white;
+    min-height: 100vh;
+    padding-top: 20px;
+    min-width:fit-content;
+    padding-right: 10px;
+}
+
+.sidebar a {
+    color: grey; 
+    padding: 15px;
+    display: block;
+}
+
+/* .sidebar a:hover {
+    background-color: white; 
+    text-decoration: none;
+    border-radius: 10px;
+} */
+
+.icon {
+    background: #ffffff;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background: linear-gradient(to right, #ffffff, #114886);
+}
+
+
+body {
+    background-color: #f0f8ff; /* Light blue background */
+}
+
+.title {
+    color: #002244;
+    font-size: 24px;
+    font-weight: bold;
+}
+.form-container {
+    background: linear-gradient(to bottom , rgba(106,106,106,0.28), rgba(132,132,132,0.28), rgba(199,199,199,0.28), rgba(255,255,255,0.28) ,rgba(255,255,255,0.28));
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 600px;
+    top: 139px;
+    left: 235px;
+    gap: 0px;
+    border-radius: 20px;
+    opacity: 0px;
+    margin-left: 5%;
+
+}
+/* Form styling */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Form row layout */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    
+
+}
+
+.form-group {
+    flex-basis: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/* Label styling */
+   
+label {
+    font-size: 25px;
+    color: #1a3c59;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0.1px;
+}
+
+input[type="date"], input[type="number"] {
+    width: 80%;
+    height: 60px;
+    padding: 0.5rem 1rem;
+    /* border: 1px solid #ccc; */
+    border-radius: 15px;
+    margin: 7px;
+    margin-top: 30px;
+    border-color: #2584c6;
+    border-width: 3px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-left: 40px;
+}
+
+input[type="date"]{
+    margin-top: 10px;
+}
+
+
+
+
+/* Select dropdown styling */
+select {
+    width: 80%;
+    height: 60px;
+    padding: 8px;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    font-size: 25px;
+    margin-left: 285px;
+    border-color: #2584c6;
+    border-width: 3px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+select:focus {
+    border-color: #2584c6;
+    outline: 5px;
+} 
+
+/* Button styling */
+button {
+    width: 231px;
+    height: 61px;
+    padding: 8px;
+    background: linear-gradient(to right, #1E1E1E, #515151 , #848484);
+    color: #f5a623; /* Orange text color */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    align-self: center;
+    margin-left: 380px;
+     margin-top:  30px; 
+     margin-bottom: 40px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #1E1E1E, #515151 , #848484); /* Reverse gradient on hover */
+    
+
+}
+
+/* Box shadow to match the effect from the image */
+.search-container {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive tweaks */
+@media (max-width: 500px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}

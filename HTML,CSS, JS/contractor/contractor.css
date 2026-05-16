@@ -1,0 +1,521 @@
+.body {
+    background: linear-gradient(180deg, #fff, #adcde4, #7db6dd); 
+}
+.h2{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #0a3654;
+}
+.h3{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #0a3654;
+}
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #ffa500;
+}
+
+header .logo-name {
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.logout {
+    color:white;
+}
+.logout:hover{
+    background-color: #ffa500;
+    padding: 5px 7px;
+    border-radius: 5px;
+}
+.button-card {
+    background: #ffffff;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.button-card-2 {
+    background: #ffffff;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.button-card-2:hover {
+transform: translateY(-5px);
+            background: linear-gradient(180deg, #fff, #adcde4, #7db6dd); 
+        }
+        .h2{
+            text-align: center;
+            font-family:'Times New Roman', Times, serif;
+            font-weight: bold;
+            color: #0a3654;
+        }
+        .h3{
+            text-align: center;
+            font-family:'Times New Roman', Times, serif;
+            font-weight: bold;
+            color: #0a3654;
+        }
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            padding: 10px 20px;
+            color: #ffa500;
+        }
+        
+        header .logo-name {
+            font-size: 20px;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .logout {
+            color:white;
+        }
+        .logout:hover{
+            background-color: #ffa500;
+            padding: 5px 7px;
+            border-radius: 5px;
+        }
+        .button-card {
+            background: #ffffff;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .button-card-2 {
+            background: #ffffff;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .button-card-2:hover {
+    transform: translateY(-5px);
+}
+.button-card-1 {
+    background: linear-gradient(to bottom, #3379c8, #114886);
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    /* border-color: #0a3; */
+}
+
+.icon {
+width: 40px;
+height: 40px;
+margin-bottom: 10px;
+background:linear-gradient(to right,#000,#4e4f50);
+border-radius: 20%;
+padding: 10px;
+
+}
+
+.p {
+
+color: white;
+text-align:center;
+}
+/* .user-icon, .menu {
+    font-size: 24px;
+    margin-left: 10px;
+    color: white;
+} */
+
+
+.sidebar {
+    background-color: white; 
+    color: white;
+    min-height: 100vh;
+    padding-top: 20px;
+    min-width:fit-content;
+    padding-right: 10px;
+}
+
+.sidebar a {
+    color: grey; 
+    padding: 15px;
+    display: block;
+}
+
+/* .sidebar a:hover {
+    background-color: white; 
+    text-decoration: none;
+    border-radius: 10px;
+} */
+
+.icon {
+    background: #ffffff;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background: linear-gradient(to right, #ffffff, #114886);
+}
+
+
+body {
+    background-color: #f0f8ff; /* Light blue background */
+}
+
+.title {
+    color: #002244;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* .search-box {
+    width: 300px;
+}
+
+.add-btn {
+    background-color: #FF9900;
+    color: white;
+    font-weight: bold;
+}
+ */
+ .search-container {
+    display: flex; /* Ensures input and button are side-by-side */
+    align-items: right; /* Vertically aligns elements */
+    border: 1px solid #2584c6; /* Light grey border */
+    padding: 5px 10px; /* Some padding around elements */
+    border-radius: 20px; /* Slight rounded corners */
+    border-width: 3px;
+  }
+  
+  .search-input {
+    border: none; /* Removes default input border */
+    outline: none; /* Removes focus outline */
+    flex: 1; /* Allows input to grow and take up available space */
+    padding: 10px; /* Padding inside the input field */
+    font-size: 16px;
+  }
+  
+  .search-button {
+    background: none; /* Removes default button background */
+    border: none; /* Removes default button border */
+    cursor: pointer; /* Changes cursor to a pointer hand on hover */
+    font-size: 16px;
+  }
+  /* Buttons */
+.buttons {
+    text-align: right;
+    margin-top: 20px;
+}
+.buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.buttons .add-btn {
+    background: linear-gradient(90deg, black, grey);
+    color: #EC8B0A;
+    border-radius: 10px;
+}
+
+/* row select */
+.row-selector {
+border-color: #2584c6;
+border-radius: 10px;
+border-width: 3px;
+padding: 5px 10px 7px 10px;
+min-width: fit-content;
+
+}
+.con-icon {
+font-size: 20px;
+margin: 5px;
+background: linear-gradient(to bottom, #3379c8, #114886);
+width: 70px;
+padding: 10px;
+height: 70px;
+border-radius: 10px;
+}
+
+/* .card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f5faff; 
+    border: none;
+} */
+
+.contractor-card .card-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #002244;
+}
+
+/* .contractor-card .card-text {
+    font-size: 14px;
+    color: #555;
+} */
+
+.unblock-btn, .block-btn {
+    color: #0056b3;
+    border-color: #0056b3;
+    align-self: flex-end;
+    border-radius: 5px;
+    border-width: 2px;
+
+}
+
+.pagination .page-link {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+        /* .card {
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f5faff; 
+            border: none;
+        } */
+        
+        .contractor-card .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #002244;
+        }
+        
+        /* .contractor-card .card-text {
+            font-size: 14px;
+            color: #555;
+        } */
+        
+        .unblock-btn, .block-btn {
+            color: #0056b3;
+            border-color: #0056b3;
+            align-self: flex-end;
+            border-radius: 5px;
+            border-width: 2px;
+
+        }
+        
+        .pagination .page-link {
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        .pagination .page-item.active .page-link {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        
+        .pagination {
+            margin-top: 20px;
+        }
+        
+        .search-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+
+main {
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(to right, #e1ecf7, #7fb9ec);
+}
+
+.home {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.home span {
+    color: #333;
+    font-weight: bold;
+}
+
+
+.form-container {
+    background: linear-gradient(90deg, rgba(106, 106, 106, 0.28) 9.67%, rgba(132, 132, 132, 0.28) 21.67%, rgba(199, 199, 199, 0.28) 40.67%, rgba(255, 255, 255, 0.28) 67.17%, rgba(255, 255, 255, 0.28) 100%);
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    height: 650px;
+    top: 139px;
+    left: 235px;
+    gap: 0px;
+    border-radius: 20px;
+    opacity: 0px;
+    margin-left: 5%;
+
+}
+
+.contractors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 30px;
+    padding: 40px;
+
+}
+
+.contractor-card {
+    background:linear-gradient(to left,white,#2676d1);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.contractor-icon {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.contractor-details p {
+    margin: 0;
+}
+
+.contractor-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+/* #card{
+    text-align: justify;
+} */
+
+        .form-container {
+            background: linear-gradient(90deg, rgba(106, 106, 106, 0.28) 9.67%, rgba(132, 132, 132, 0.28) 21.67%, rgba(199, 199, 199, 0.28) 40.67%, rgba(255, 255, 255, 0.28) 67.17%, rgba(255, 255, 255, 0.28) 100%);
+            justify-content: center;
+            align-items: center;
+            width: 900px;
+            height: 650px;
+            top: 139px;
+            left: 235px;
+            gap: 0px;
+            border-radius: 20px;
+            opacity: 0px;
+            margin-left: 5%;
+        
+        }
+        
+        .contractors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 2fr);
+            gap: 30px;
+            padding: 40px;
+        
+        }
+        
+        .contractor-card {
+            background:linear-gradient(to left,white,#2676d1);
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contractor-icon {
+            font-size: 40px;
+            margin-right: 10px;
+        }
+        
+        .contractor-details p {
+            margin: 0;
+        }
+
+        .contractor-details {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        
+        /* #card{
+            text-align: justify;
+        } */

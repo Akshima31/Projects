@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Staff Dashboard</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:40px 20px;
+    background:url('/STAFF.png') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+    color:white;
+}
+
+/* Glass Container */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Header */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+h2{
+    margin:0;
+}
+
+.btn{
+    padding:8px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn-logout{
+    background:black;
+    color:white;
+}
+
+.btn-logout:hover{
+    background:#333;
+}
+
+/* Form */
+form{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:15px;
+    margin-bottom:30px;
+}
+
+input{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+.radio-group{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.btn-add{
+    background:black;
+    color:white;
+    grid-column: span 3;
+}
+
+.btn-add:hover{
+    background:#333;
+}
+
+/* Table */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background: rgba(255,255,255,0.2);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+th, td{
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background: rgba(0,0,0,0.3);
+}
+
+tr{
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+.btn-edit{
+    background:#28a745;
+    color:white;
+    padding:5px 10px;
+    border-radius:6px;
+    text-decoration:none;
+}
+
+.btn-delete{
+    background:#dc3545;
+    color:white;
+    padding:5px 10px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.btn-edit:hover{
+    opacity:0.8;
+}
+
+.btn-delete:hover{
+    opacity:0.8;
+}
+
+.empty{
+    text-align:center;
+    padding:20px;
+    background: rgba(255,255,255,0.2);
+    border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+    <h2>Welcome, <%= user.username %></h2>
+    <div>
+    <a href="/logout"><button class="btn btn-logout">Logout</button></a>
+    <a href="/"><button class="btn btn-logout">Back</button></a>
+    </div>
+</div>
+
+<h3>Add Staff Member</h3>
+
+<form action="/staff/add" method="POST">
+
+    <input type="text" name="name" placeholder="Staff Name" required>
+    <input type="number" name="age" placeholder="Age" required>
+    
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <div class="radio-group">
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+    </div>
+
+    <button type="submit" class="btn btn-add">Add Staff Member</button>
+
+</form>
+
+<h3>Staff List</h3>
+
+<% if (staff && staff.length > 0) { %>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Phone</th>
+        <th>Gender</th>
+        <th>Actions</th>
+    </tr>
+
+    <% staff.forEach(member => { %>
+    <tr>
+        <td><%= member.id %></td>
+        <td><%= member.name %></td>
+        <td><%= member.age %></td>
+        <td><%= member.phone %></td>
+        <td><%= member.gender %></td>
+        <td>
+            <a href="/staff/edit/<%= member.id %>" class="btn-edit">Edit</a>
+
+            <form action="/staff/delete/<%= member.id %>" method="POST" style="display:inline;">
+                <button type="submit" class="btn-delete"
+                onclick="return confirm('Delete <%= member.name %>?')">
+                Delete
+                </button>
+            </form>
+        </td>
+    </tr>
+    <% }) %>
+
+</table>
+
+<% } else { %>
+
+<div class="empty">
+    No Staff Members found. Add one above 
+</div>
+
+<% } %>
+
+</div>
+</body>
+</html>

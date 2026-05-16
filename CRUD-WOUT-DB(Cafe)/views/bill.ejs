@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bill</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:url('/orders.jpg') no-repeat center center/cover;
+font-family:Arial;
+color:white;
+}
+
+.container{
+width:600px;
+padding:40px;
+border-radius:20px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-bottom:20px;
+}
+
+th,td{
+padding:10px;
+text-align:center;
+}
+
+th{
+background:rgba(0,0,0,0.3);
+}
+
+.total{
+text-align:right;
+font-weight:bold;
+margin-top:10px;
+}
+
+.buttons{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+}
+
+button{
+padding:10px 15px;
+border:none;
+border-radius:8px;
+background:black;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#333;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Bill Summary</h2>
+
+<table>
+
+<tr>
+<th>Item</th>
+<th>Price</th>
+</tr>
+
+<% cart.forEach(item => { %>
+
+<tr>
+<td><%= item.name %></td>
+<td>₹ <%= item.price %></td>
+</tr>
+
+<% }) %>
+
+</table>
+
+<div class="total">
+Total : ₹ <%= total %>
+</div>
+
+<div class="buttons">
+
+<a href="/order">
+<button>Back</button>
+</a>
+
+<button style="background-color: rgb(143, 12, 38);" onclick="placeOrder()">Place Order</button>
+
+</div>
+<div style="text-align:center; margin-top:10px; margin-left: 500px; " >
+<button onclick="clearOrder()">Clear Order</button>
+</div>
+</div>
+<script>
+
+function placeOrder(){
+
+fetch('/place-order',{
+method:'POST'
+})
+.then(res => res.text())
+.then(data => {
+
+alert("Order Placed Successfully ");
+
+// 2 sec delay
+setTimeout(()=>{
+window.location.href = "/viewOrder";
+},2000);
+
+});
+
+}
+
+//clear order 
+function clearOrder(){
+fetch('/clear-order',{
+method:'POST'
+})
+.then(res => res.text())
+.then(data => {
+
+alert("Order Cleared");
+
+// table empty 
+document.querySelector("table").innerHTML = `
+<tr>
+<th>Item</th>
+<th>Price</th>
+</tr>
+`;
+
+// reset total
+document.querySelector(".total").innerHTML = "Total : ₹ 0";
+
+});
+}
+
+</script>
+</body>
+</html>

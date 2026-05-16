@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-color: linear-gradient(150deg, black , rgb(39, 37, 37) , rgb(58, 55, 55));
+    --surface-color: rgb(46, 43, 46);
+    --text-primary: #f8fafc;
+    --text-secondary: wheat;
+    --accent: rgba(214, 83, 133, 0.918);
+    --accent-hover: rgba(226, 63, 172, 0.836);
+    --border: rgba(214, 83, 133, 0.918);
+}
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: var(--bg-color);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+}
+
+.container{
+    width:350px;
+    padding:40px;
+    border-radius:16px;
+    background: rgb(43, 33, 33);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 30px rgba(70, 69, 69, 0.726);
+    text-align:center;
+}
+
+/* Heading */
+h2{
+    margin-bottom:25px;
+    font-weight:800;
+    font-size:1.8rem;
+    background: linear-gradient(rgba(196, 69, 118, 0.918));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Inputs same as index */
+input{
+    width:93%;
+    padding:12px;
+    margin:12px 0;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:black;
+    color:white;
+    outline:none;
+    transition:0.3s;
+}
+
+input::placeholder{
+    color:white;
+}
+
+input:focus{
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(27, 6, 27, 0.37);
+}
+
+/* Button same as index */
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background: var(--accent);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Link styling */
+.link{
+    margin-top:15px;
+    font-size:14px;
+    color: var(--text-secondary);
+}
+
+.link a{
+    color: var(--accent);
+    text-decoration:none;
+    font-weight:600;
+}
+
+.link a:hover{
+    text-decoration:underline;
+    color: rgba(63, 162, 201, 0.73);
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <form action="/login" method="POST">
+        <h2>Welcome</h2>
+        <input type="text" name="name" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+
+        <div class="link">
+            Don't have an account? 
+            <a href="/register">Create Account</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

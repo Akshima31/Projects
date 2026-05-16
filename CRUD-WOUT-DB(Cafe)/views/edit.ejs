@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Student</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:url('/STAFF.png') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+    color:white;
+}
+
+/* Glass Card */
+.container{
+    width:500px;
+    padding:40px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Heading */
+h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* Form */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input, select{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+.radio-group{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-update{
+    background:black;
+    color:white;
+}
+
+.btn-update:hover{
+    background:#333;
+}
+
+.btn-back{
+    background:transparent;
+    border:1px solid white;
+    color:white;
+}
+
+.btn-back:hover{
+    background:white;
+    color:black;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    justify-content:space-between;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Edit Staff Member</h2>
+
+<form action="/staff/edit/<%= member.id %>" method="POST">
+
+    <input type="text" name="name" value="<%= member.name %>" required>
+
+    <input type="number" name="age" value="<%= member.age %>" required>
+
+     <input type="tel" name="phone"  value="<%= member.phone %>" required>
+
+    <div class="radio-group">
+        <label>
+            <input type="radio" name="gender" value="Male"
+            <%= member.gender === "Male" ? "checked" : "" %> >
+            Male
+        </label>
+
+        <label>
+            <input type="radio" name="gender" value="Female"
+            <%= member.gender === "Female" ? "checked" : "" %> >
+            Female
+        </label>
+    </div>
+
+    <div class="buttons">
+        <button type="submit" class="btn btn-update">Update</button>
+
+        <a href="/add">
+            <button type="button" class="btn btn-back">Back</button>
+        </a>
+    </div>
+
+</form>
+
+</div>
+
+</body>
+</html>

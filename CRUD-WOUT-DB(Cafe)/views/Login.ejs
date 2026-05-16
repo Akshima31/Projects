@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+   background: url('/LOGIN.png') no-repeat center center / cover;
+    font-family: Arial, sans-serif;
+}
+
+.container{
+    width:350px;
+    padding:40px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    text-align:center;
+    color:white;
+}
+
+h2{
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:12px 0;
+    border-radius:10px;
+    border:none;
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:black;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#333;
+}
+
+.link{
+    margin-top:15px;
+    font-size:14px;
+}
+
+.link a{
+    color:white;
+    text-decoration:underline;
+}
+.link a:hover{
+    color: blue;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <form action="/login" method="POST">
+        <h2>Welcome Back</h2>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+
+        <div class="link">
+            Don't have an account? 
+            <a href="/register">Create Account</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

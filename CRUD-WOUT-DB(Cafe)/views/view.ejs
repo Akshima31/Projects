@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>View Staff</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:40px 20px;
+    background:url('/STAFF.png') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+    color:white;
+}
+
+/* Glass Container */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Header */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+h2{
+    margin:0;
+}
+
+.btn{
+    padding:8px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn-back{
+    background:black;
+    color:white;
+}
+
+.btn-back:hover{
+    background:#333;
+}
+
+/* Table */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background: rgba(255,255,255,0.2);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+th, td{
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background: rgba(0,0,0,0.3);
+}
+
+tr{
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+.empty{
+    text-align:center;
+    padding:20px;
+    background: rgba(255,255,255,0.2);
+    border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+    <h2>Staff List – Welcome, <%= user.username %> </h2>
+    <a href="/">
+        <button class="btn btn-back">Back</button>
+    </a>
+</div>
+
+<% if (staff && staff.length > 0) { %>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Phone</th>
+        <th>Gender</th>
+    </tr>
+
+    <% staff.forEach(member => { %>
+    <tr>
+        <td><%= member.id %></td>
+        <td><%= member.name %></td>
+        <td><%= member.age %></td>
+        <td><%= member.phone %></td>
+        <td><%= member.gender %></td>
+    </tr>
+    <% }) %>
+
+</table>
+
+<% } else { %>
+
+<div class="empty">
+    No Staff Members available to display 
+</div>
+
+<% } %>
+
+</div>
+
+</body>
+</html>
