@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order Management</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bg-color: linear-gradient(150deg, rgb(61, 60, 60) , rgb(80, 76, 76) , rgb(100, 95, 95));
+    --surface-color: rgb(43, 33, 33);
+    --text-primary: #f8fafc;
+    --text-secondary: wheat;
+    --accent: rgba(214, 83, 133, 0.918);
+    --accent-hover: rgba(226, 63, 172, 0.836);
+    --border: rgba(214, 83, 133, 0.918);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background: var(--bg-color);
+    color:white;
+    min-height:100vh;
+    padding:40px;
+}
+
+/* HEADER */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+    border-bottom:1px solid var(--border);
+    padding-bottom:20px;
+}
+
+.header h1{
+    color: var(--accent);
+    font-size:2rem;
+}
+
+.button{
+    padding:12px 22px;
+    border:none;
+    border-radius:10px;
+    background: var(--accent);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.button:hover{
+    background: var(--accent-hover);
+}
+
+/* ORDER CARD */
+
+.order-container{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+.order-card{
+    background: var(--surface-color);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px;
+    box-shadow: 0 4px 30px rgba(12, 12, 12, 0.911);
+}
+
+.order-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.order-top h2{
+    color: var(--accent);
+}
+
+.date{
+    color: var(--text-secondary);
+}
+
+.items{
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+.item{
+    padding:12px;
+    background:black;
+    border-radius:10px;
+    margin-bottom:10px;
+    border:1px solid var(--border);
+}
+
+.total{
+    font-size:1.2rem;
+    font-weight:700;
+    color: var(--accent);
+}
+
+.empty{
+    text-align:center;
+    padding:80px;
+    background: var(--surface-color);
+    border-radius:20px;
+    border:1px solid var(--border);
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <h1>Order Management</h1>
+
+    <a href="/admin"><button class="button">Back </button></a>
+
+</div>
+
+<!-- ORDERS -->
+
+<div class="order-container">
+
+<% if(orders && orders.length > 0){ %>
+
+    <% orders.forEach(order => { %>
+
+        <div class="order-card">
+
+            <div class="order-top">
+
+                <h2>
+                    Customer : <%= order.username %>
+                </h2>
+
+                <div class="date">
+
+                    <%= new Date(order.createdAt).toLocaleString() %>
+
+                </div>
+
+            </div>
+
+            <div class="items">
+
+                <% order.items.forEach(item => { %>
+
+                    <div class="item">
+
+                        <strong><%= item.name %></strong>
+
+                        × <%= item.quantity %>
+
+                        - ₹<%= item.price * item.quantity %>
+
+                    </div>
+
+                <% }) %>
+
+            </div>
+
+            <div class="total">
+
+                Total : ₹<%= order.total %>
+
+            </div>
+
+        </div>
+
+    <% }) %>
+
+<% } else { %>
+
+    <div class="empty">
+
+        <h2>No Orders Found</h2>
+
+    </div>
+
+<% } %>
+
+</div>
+
+</body>
+</html>
