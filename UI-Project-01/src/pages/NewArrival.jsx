@@ -3,7 +3,7 @@ import newArrivals from "../data/newArrival";
 
 export default function NewArrivals() {
     return(
-        <section className="mx-auto w-full mx-w-7xl px-5 py-6 ">
+        <section className="mx-auto w-full max-w-7xl px-4 py-3 sm:px-5 sm:py-5 ">
              {/* HEADING */}
              <div className="mb-5 ">
                 <h2 className="text-xl font-bold text-slate-900">

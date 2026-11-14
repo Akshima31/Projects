@@ -18,7 +18,7 @@ export default function ScienceCombos() {
   };
 
   return (
-    <section className="mx-auto max-w-7xl px-5 py-6">
+    <section className="mx-auto max-w-7xl px-5 pt-3 pb-2 sm:px-5 sm:py-6">
       <div className="rounded-2xl bg-gradient-to-b from-blue-300 to-blue-50 p-4 sm:p-6">
 
         {/* Heading and Arrows */}
